@@ -7,8 +7,6 @@ $(window).on("load", function() {
 })
 
 
-
-
 $(document).ready(function() {
 
 	$('#slides').superslides({
@@ -45,9 +43,6 @@ $(document).ready(function() {
 	});
 
 
-	
-
-
 	var skillsTopOffset = $(".skillsSection").offset().top;
 	var statsTopOffset = $(".statsSection").offset().top;
 	var countUpFinished = false;
@@ -66,10 +61,7 @@ $(document).ready(function() {
 		        	$(this.el).find('.percent').text(Math.round(percent));
 		        }
 		    });
-
-
 		}
-
 
 		if(!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
 			$(".counter").each(function() {
@@ -80,10 +72,7 @@ $(document).ready(function() {
 			})
 
 			countUpFinished = true;
-
 		}
-
-
 	});
 
 
@@ -114,13 +103,12 @@ $(document).ready(function() {
 				queue: false
 			}
 		});
-
 		return false;
 	});
 
 
 
-	$("#navigation li a").click(function(e) {
+	$("#navigation li a .prevent").click(function(e) {
 		e.preventDefault();
 
 		var targetElement = $(this).attr("href");
@@ -130,15 +118,12 @@ $(document).ready(function() {
 	});
 
 
-
-
 	const nav = $("#navigation");
 	const navTop = nav.offset().top;
 
 	$(window).on("scroll", stickyNavigation);
 
 	function stickyNavigation() {
-
 		var body = $("body");
 
 		if($(window).scrollTop() >= navTop) {
@@ -149,12 +134,7 @@ $(document).ready(function() {
 			body.css("padding-top", 0);
 			body.removeClass("fixedNav");
 		}
-
-
-
-
 	}
-
 });
 
 
